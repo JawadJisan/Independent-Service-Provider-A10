@@ -79,15 +79,15 @@ const Login = () => {
         <div className='container mt-5 w-50 mx-auto'>
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
+                <Form.Label >Email address</Form.Label>
 
-                <Form.Control ref={emailRef} className='formbox' type="email" placeholder="Enter email" />
+                <Form.Control required ref={emailRef} className='formbox' type="email" placeholder="Enter email" />
 
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control ref={passwordRef} className='formbox' type="password" placeholder="Min 8 Character" />
+                <Form.Control required ref={passwordRef} className='formbox' type="password" placeholder="Min 8 Character" />
             </Form.Group>
             <button onClick={forgotPassword} className='forgotBtn '>Forgot your password?</button>
 

@@ -68,7 +68,7 @@ const Registration = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Full Name</Form.Label>
 
-                        <Form.Control className='formbox' name='name' type="text" placeholder="Enter a profile name" />
+                        <Form.Control  className='formbox' name='name' type="text" placeholder="Enter a profile name" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -86,7 +86,7 @@ const Registration = () => {
                     
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Create a password</Form.Label>
-                        <Form.Control ref={passwordRef} className='formbox' type="password" placeholder="min 8 characters"></Form.Control>
+                        <Form.Control required ref={passwordRef} className='formbox' type="password" placeholder="min 8 characters"></Form.Control>
                     </Form.Group>
 
                     

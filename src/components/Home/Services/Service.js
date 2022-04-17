@@ -6,8 +6,9 @@ import './Service.css'
 const Service = ({ service }) => {
     const { name, img, price, description, id } = service;
     const navigate = useNavigate();
-    const goCheckout = id => {
-        navigate(`/checkout/${id}`);
+    
+    const goCheckout = name => {
+        navigate(`/checkout/${name}`);
     }
 
     return (
@@ -21,7 +22,7 @@ const Service = ({ service }) => {
                     <h1 className="text-center text-4xl">$-{price} </h1>
                     <p>{description} </p>
                     <div className="card-actions justify-center">
-                    <button className="btn btn-primary" onClick={() => goCheckout(id)}> <Link to='/checkout'></Link> Chekout</button>
+                    <button className="btn btn-primary" onClick={() => goCheckout(name)}> <Link to='/checkout'></Link> Chekout</button>
                     </div>
                 </div>
             </div>
