@@ -1,23 +1,30 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Service.css'
 
 
-const Service = ({service}) => {
-    const {name , img , price, description} = service;
+const Service = ({ service }) => {
+    const { name, img, price, description, id } = service;
     const navigate = useNavigate();
-    const goCheckout = name => {
-        navigate(`/checkout/${name}`);
+    const goCheckout = id => {
+        navigate(`/checkout/${id}`);
     }
 
     return (
         <div className='service'>
-            <img className='w-100' src={img} alt="" />
-            <h2>{name} </h2>
-            <h1>{price} </h1>
-            <p>{description} </p>
-            <button onClick={()=>goCheckout(name)} className='btn btn-primary'>Checkout </button>
             
+
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <figure><img src={img} alt="" /></figure>
+                <div className="card-body">
+                    <h2 className="card-title">{name} </h2>
+                    <h1 className="text-center text-4xl">$-{price} </h1>
+                    <p>{description} </p>
+                    <div className="card-actions justify-center">
+                    <button className="btn btn-primary" onClick={() => goCheckout(id)}> <Link to='/checkout'></Link> Chekout</button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

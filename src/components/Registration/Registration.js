@@ -4,6 +4,8 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { FaGoogle   } from 'react-icons/fa'
+import toast, { Toaster } from 'react-hot-toast';
+
 
 
 const Registration = () => {
@@ -15,7 +17,6 @@ const Registration = () => {
     
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
-
     const [
         createUserWithEmailAndPassword,
         user,
@@ -23,9 +24,11 @@ const Registration = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
+
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     console.log(user);
+
     let errorElement;
 
 
@@ -37,7 +40,7 @@ const Registration = () => {
         const confirmEmail = confirmemailRef.current.value;
         const name = event.target.name.value;
 
-        console.log(email, password, confirmEmail, name)
+        // console.log(email, password, confirmEmail, name)
 
         if(email == confirmEmail){
             createUserWithEmailAndPassword(email, password);
@@ -45,7 +48,8 @@ const Registration = () => {
         }
         else{
             errorElement = <p className='text-danger'>Email Dont Matched</p>;
-            console.log('Email Dont Matched')
+            console.log('Email Dont Matched');
+            toast("Email didn't Match!!")
         }
     }
 
@@ -76,8 +80,10 @@ const Registration = () => {
                         <Form.Label>Confirm your email</Form.Label>
                         <Form.Control required ref={confirmemailRef} className='formbox' type="email" placeholder="Enter Your email again." />
                     </Form.Group>
-                    {errorElement}
 
+                    {errorElement}
+                    <Toaster />
+                    
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Create a password</Form.Label>
                         <Form.Control ref={passwordRef} className='formbox' type="password" placeholder="min 8 characters"></Form.Control>
@@ -89,7 +95,7 @@ const Registration = () => {
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check onClick={()=>setAgree(!agree)} type="checkbox" label="Accept Terms & condition" />
 
-                        <label className={agree ? 'text-primary' : 'text-danger'} htmlFor="terms">Share my registration data with Spotify's content providers for marketing purposes.</label>
+                        <label className={agree ? 'text-primary' : 'text-danger'} htmlFor="terms">Agree to Terms and Conditions</label>
                     </Form.Group>
 
                     <button disabled={!agree} type='submit' className='btn d-block mx-auto btnStyle login '>

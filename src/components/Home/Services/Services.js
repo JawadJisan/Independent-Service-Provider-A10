@@ -17,9 +17,9 @@ const Services = () => {
             <div className='row'>
                 <h2 className='title mt-5'>What am I offering?</h2>
                 
-                <div className='services-containe'>
+                <div className='services-containe justify-items-center'>
                     {
-                       serrvices?.map(service => <Service key={service.div} service={service}></Service>) 
+                       serrvices?.map(service => <Service key={service.id} service={service}></Service>) 
                     }
                 </div>
 
