@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { FaGoogle   } from 'react-icons/fa'
 import toast, { Toaster } from 'react-hot-toast';
+import './Registration.css'
 
 
 
@@ -55,29 +56,28 @@ const Registration = () => {
 
 
     return (
-        <div>
-            <h5 className='text-center mt-5 mb-5'>Create Account</h5>
+        <div className='registration-container'>
+            <h5 className='text-center header'>Create Account</h5>
 
-            <button onClick={()=>signInWithGoogle()} className='w-50 btn d-block mx-auto btnStyle googleStyle '>
-                <span className='signicon mr-5'><FaGoogle /></span>
+            <button onClick={()=>signInWithGoogle()} className='w-50 btn d-block mx-auto btnStyle googleStyle style' >
                 CONTINUE WITH GOOGLE
             </button>
 
             <div className='container w-50 mx-auto'>
                 <Form onSubmit={handleSignUp}>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Full Name</Form.Label>
+                        <Form.Label className='label-text'>Full Name</Form.Label>
 
                         <Form.Control  className='formbox' name='name' type="text" placeholder="Enter a profile name" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>What's your email?</Form.Label>
+                        <Form.Label className='label-text'>What's your email?</Form.Label>
                         <Form.Control required ref={emailRef} className='formbox' type="required" placeholder="Enter Your email." />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Confirm your email</Form.Label>
+                        <Form.Label className='label-text'>Confirm your email</Form.Label>
                         <Form.Control required ref={confirmemailRef} className='formbox' type="email" placeholder="Enter Your email again." />
                     </Form.Group>
 
@@ -85,8 +85,8 @@ const Registration = () => {
                     <Toaster />
                     
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Create a password</Form.Label>
-                        <Form.Control required ref={passwordRef} className='formbox' type="password" placeholder="min 8 characters"></Form.Control>
+                        <Form.Label className='label-text'>Create a password</Form.Label>
+                        <Form.Control required ref={passwordRef} className='formbox' type="password" placeholder="min 6 characters"></Form.Control>
                     </Form.Group>
 
                     
@@ -98,7 +98,7 @@ const Registration = () => {
                         <label className={agree ? 'text-primary' : 'text-danger'} htmlFor="terms">Agree to Terms and Conditions</label>
                     </Form.Group>
 
-                    <button disabled={!agree} type='submit' className='btn d-block mx-auto btnStyle login '>
+                    <button disabled={!agree} type='submit' className='btn d-block disable mx-auto btnStyle login '>
                         Sign Up
                     </button>
                 </Form>

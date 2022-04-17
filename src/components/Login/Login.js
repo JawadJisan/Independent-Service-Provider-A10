@@ -69,7 +69,18 @@ const Login = () => {
         if(error){
             console.log(error);
             console.log(error?.code);
-            toast(error?.code);
+            // toast(error?.code);
+            toast.error(error?.code, {
+                style: {
+                  border: '1px solid #713200',
+                  padding: '16px',
+                  color: '#713200',
+                },
+                iconTheme: {
+                  primary: '#713200',
+                  secondary: '#FFFAEE',
+                },
+              });
         }
     },[googleError, fbError, gitError,emailPassError ])
 
@@ -79,14 +90,14 @@ const Login = () => {
         <div className='container mt-5 w-50 mx-auto'>
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label >Email address</Form.Label>
+                <Form.Label className='label-text' >Email address</Form.Label>
 
                 <Form.Control required ref={emailRef} className='formbox' type="email" placeholder="Enter email" />
 
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
+                <Form.Label className='label-text'>Password</Form.Label>
                 <Form.Control required ref={passwordRef} className='formbox' type="password" placeholder="Min 8 Character" />
             </Form.Group>
             <button onClick={forgotPassword} className='forgotBtn '>Forgot your password?</button>
@@ -123,21 +134,21 @@ const Login = () => {
             <h5 className='text-center'>continue with</h5>
             <div className='d-flex justify-content-center'>
 
-            <button onClick={()=>signInWithGithub()} className='btn   btnStyle '>
-                <span className='icon'><FaGithub /></span>
+            <button onClick={()=>signInWithGithub()} className='   btnStyle p-3'>
+                <span className='icon git-icon'><FaGithub /></span>
             </button>
 
-            <button onClick={()=>signInWithFacebook()} className='btn  btnStyle '>
-                <span className='icon'><FaFacebook /></span>
+            <button onClick={()=>signInWithFacebook()} className=' p-3  btnStyle '>
+                <span className='icon fb-icon'><FaFacebook /></span>
             </button>
 
-            <button onClick={()=>signInWithGoogle()} className='btn  btnStyle '>
-                <span className='icon'><FaGoogle /></span>
+            <button onClick={()=>signInWithGoogle()} className='  btnStyle p-3'>
+                <span className='icon goo-icon'><FaGoogle /></span>
             </button>
             </div>
 
             { logedUser ? 
-                <button onClick={()=>signOut(auth)} className='w-25 btn d-block mx-auto btnStyle googleStyle '>
+                <button onClick={()=>signOut(auth)} className='btn d-block mx-auto log-btn btnStyle googleStyle '>
                 LOG OUT
             </button>
             : ''

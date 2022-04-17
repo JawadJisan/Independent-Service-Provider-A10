@@ -18,6 +18,12 @@
     color: rgb(43, 40, 40);
     border: 1px solid black;
 }
+.log-btn{
+    width: 150px;
+    /* border-radius: 20px; */
+    
+}
+
 
 .login{
     background-color: #1ed760;
@@ -38,8 +44,17 @@
     size: 100px;
     /* padding-right: 10px; */
 }
-.icon:hover{
+/* .icon:hover{
     color: #2e5ec0;
+} */
+.git-icon:hover{
+    color: rgb(194, 62, 62);
+}
+.fb-icon:hover{
+    color: #2e5ec0;
+}
+.goo-icon:hover{
+    color: rgb(255, 85, 0);
 }
 
 .forgotBtn {

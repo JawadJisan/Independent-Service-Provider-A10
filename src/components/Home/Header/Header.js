@@ -4,7 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
-
+import './Header.css'
 
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -14,7 +14,7 @@ const Header = () => {
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
             <Navbar.Brand as={Link} to='/'>
-                <img className='img' height={40} alt="" />
+                <img className=''  alt="" />
                 Developer</Navbar.Brand>
 
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -24,22 +24,18 @@ const Header = () => {
                 <Nav className=''>
                 <Nav.Link  as={Link} to='/services'>Services</Nav.Link>
                 <Nav.Link  as={Link} to='/blogs'>Blogs</Nav.Link>
-                <Nav.Link  as={Link} to='/checkout'>Checkout</Nav.Link>
                 <Nav.Link  as={Link} to='/about'>About</Nav.Link>
                 <Nav.Link  as={Link} to='/registration'>registration</Nav.Link>
 
-                { user ? (<button onClick={()=>signOut(auth)}>Log out</button>)
+                { user ? (<button className='header-logut-btn' onClick={()=>signOut(auth)}>Log out</button>)
                         : 
                             (<Nav.Link as={Link} to='/login'>Log in</Nav.Link>)
                         }
                         {
                          user ?
-                        (<span>{user?.displayName}</span>) : ''
+                        (<span className='header-d-name'>{user?.displayName}</span>) : ''
                         } 
-                    
-
-                    
-                    
+               
                 </Nav>
 
             </Navbar.Collapse>

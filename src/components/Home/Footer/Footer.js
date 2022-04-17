@@ -15,12 +15,11 @@ const Footer = () => {
             {year} All rights reserved.</span>
 
         </div>
-
         <div className='items-center div'>
           <span class="title-footer">Social</span>
           <div class="social">
-            <a target='_blank' href='https://web.facebook.com/profile.php?id=100054546439637'> <FaFacebookSquare /> </a>
-            <a href='https://github.com/' target='_blank'> <FaGithub /> </a>
+            <a className='footer-icon' target='_blank' href='https://web.facebook.com/profile.php?id=100054546439637'> <FaFacebookSquare /> </a>
+            <a className='footer-icon' href='https://github.com/' target='_blank'> <FaGithub /> </a>
           </div>
         </div>
       </div>

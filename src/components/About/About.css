@@ -1,0 +1,14 @@
+
+/* .personal-photo{
+    height: 400px;
+    width: 350px;
+    object-fit: fill;
+    border-radius: 2%;
+    align-items: center;
+    justify-content: center;
+} */
+.personal-photo{
+    width: 100%;
+}
+
+

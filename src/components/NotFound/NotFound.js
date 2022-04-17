@@ -5,6 +5,7 @@ import './NotFound.css'
 const NotFound = () => {
     return (
         <section className='px-4 py-32 mx-auto max-w-7xl'>
+            <h2 class="title">About me</h2>
       <div className='grid items-center w-full grid-cols-1 gap-10 mx-auto  lg:grid-cols-2 xl:gap-32'>
         <div>
           <div className='img-404  bg-gray-200 rounded-lg'>
