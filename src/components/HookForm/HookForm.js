@@ -15,7 +15,7 @@ function HookForm() {
   } = useForm();
 
   const onSubmit = (data) => {
-    toast.success('Thank you for getting in touch! We appreciate you contacting us/ [Your Company]. One of our colleagues will get back in touch with you soon!Have a great day!')
+    toast.success('thank you for the booking.! We appreciate you contacting us/ [Your Company]. One of our colleagues will get back in touch with you soon!Have a great day!')
 
   }; // your form submit function which will invoke after successful validation
 
@@ -23,8 +23,8 @@ function HookForm() {
 
   return (
     <form className="hook-forms" onSubmit={handleSubmit(onSubmit)}>
-      <label className="lavel ">First Name</label>
-      <input className="namefield field-label"
+      <label className="lavel ">User Name</label>
+      <input required className="namefield field-label"
         {...register("firstName", {
           required: true,
           maxLength: 20,
@@ -39,9 +39,9 @@ function HookForm() {
         <p>Alphabetical characters only</p>
       )}
       <label className="lavel">Your Email</label>
-      <input className="field-label" {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
+      <input required className="field-label" {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
       
-      <label className="lavel">Age</label>
+      <label className="lavel">Mobile</label>
       <input className="field-label" {...register("age", { min: 18, max: 99 })} />
 
       <label className="lavel">Description</label>

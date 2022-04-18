@@ -10,7 +10,7 @@ const Footer = () => {
     <footer class=" p-10 text-neutral-content">
       <div className='footer-grid'>
         <div className='div'>
-          <span className='title-footer text-center'>Developed By <a href="">Jawad Jisan</a> | &#169;
+          <span className='title-footer text-center'>Developed By <a href="https://personal-service-assignment10.web.app/">Jawad Jisan</a> | &#169;
 
             {year} All rights reserved.</span>
 
