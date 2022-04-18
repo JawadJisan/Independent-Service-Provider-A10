@@ -39,7 +39,7 @@ function HookForm() {
         <p>Alphabetical characters only</p>
       )}
       <label className="lavel">Your Email</label>
-      <input required className="field-label" {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
+      <input required className="field-label" {...register("lastName")} />
       
       <label className="lavel">Mobile</label>
       <input className="field-label" {...register("age", { min: 18, max: 99 })} />

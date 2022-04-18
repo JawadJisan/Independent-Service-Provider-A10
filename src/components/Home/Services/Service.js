@@ -22,6 +22,7 @@ const Service = ({ service }) => {
                     <h1 className="text-center text-4xl">$-{price} </h1>
                     <p>{description} </p>
                     <div className="card-actions justify-center">
+                        
                     <button className="btn btn-primary" onClick={() => goCheckout(name)}> <Link to='/checkout'></Link> Chekout</button>
                     </div>
                 </div>
