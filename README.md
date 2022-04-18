@@ -18,3 +18,11 @@
 - React Web App Develpoment
 + System & Softwere Develpoment
 + Network Develpoment
+
+### Technology Uses
++ Firebase
++ React Router
++ React Hook Form
++ React Toster
++ React Toster
+
