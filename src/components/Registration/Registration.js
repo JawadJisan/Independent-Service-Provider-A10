@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
@@ -53,6 +53,25 @@ const Registration = () => {
             toast("Email didn't Match!!")
         }
     }
+    useEffect(()=>{
+        const errors = googleError || error ;
+        if(errors){
+            console.log(errors);
+            console.log(errors?.code);
+            // toast(error?.code);
+            toast.error(errors?.code, {
+                style: {
+                  border: '1px solid #713200',
+                  padding: '16px',
+                  color: '#713200',
+                },
+                iconTheme: {
+                  primary: '#713200',
+                  secondary: '#FFFAEE',
+                },
+              });
+        }
+    },[googleError, error])
 
 
     return (
