@@ -16,7 +16,7 @@ const Banner = () => {
           />
       
           <Carousel.Caption>
-            <h1>Hello, I'm Sebastin Craig</h1>
+            <h1>Hello, I'm Sebastin Craig.</h1>
             <h3>I design 3D visuals and user interfaces for apps and websites</h3>
           </Carousel.Caption>
         </Carousel.Item>
